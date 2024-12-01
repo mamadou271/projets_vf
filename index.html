@@ -1,72 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banque d'Exercices JavaScript</title>
     <link rel="stylesheet" href="style.css">
-    <title>Mission 5</title>
+    <script src="exercice.js"></script>
+    
 </head>
 <body>
-    <!--Amin Chebbi-->
-    <nav class="Menu"> 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="toggle-label">Menu</label>
+    <div class="container">
+        <h1>Banque d'Exercices JavaScript</h1>
+        <div class="exercise">
+            <h2>1. Somme</h2>
+            <p>Écrire une fonction qui prend deux nombres en entrée et retourne leur somme.</p>
+            <button onclick="somme()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>2. Afficher 1..10</h2>
+            <p>Écrire une fonction qui affiche les nombres de 1 à 10.</p>
+            <button onclick="afficherNombres()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Trouver le plus grand entre deux nombres</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="plusGrandNombre()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Crée une fonction qui vérifie si un nombre donné est pair ou impair.</h2>
 
-        <ul>
-            <li class="surbrillance">
-                <a href ="#">HTML & CSS</a>
-                <ul>
-                    <li><a href="TP1/index.html">TP 1</a></li>
-                    <li><a href="TP2/index.html">TP 2</a></li>
-                    <li><a href="TP3/index.html">TP 3</a></li>
-                    <li><a href="TP4/index.html">TP 4</a></li>
-                </ul>
-            </li>
+            
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="pair()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Compter les voyelles dans une chaîne</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="compterVoyelles()" id="resultat">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Calculer la factorielle d'un nombre</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="factorielle()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Vérifier si une chaîne est un palindrome</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="Palindrome()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3.  Créer une fonction qui retourne l'âge d'une personne à partir de sa date de naissance</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres
+            <button onclick="calculerAge()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3.  Trouver le plus petit nombre
+    </h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="trouverMinimum()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. céer une fonction qui permet de comparer 2 valeurs</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="comparer2nombres()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. ecrire Fonction pour vérifier si un numéro est premier</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="premier()">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Trouver le plus grand entre deux nombres</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="showSolution(3)">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Trouver le plus grand entre deux nombres</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="showSolution(3)">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Trouver le plus grand entre deux nombres</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="showSolution(3)">Voir la solution</button>
+        </div>
+        <div class="exercise">
+            <h2>3. Trouver le plus grand entre deux nombres</h2>
+            <p>Écrire une fonction qui retourne le plus grand entre deux nombres.</p>
+            <button onclick="showSolution(3)">Voir la solution</button>
+        </div>
 
-            <li class="surbrillance">
-                <a href="#">JavaScript</a>
-                <ul>
-                    <li><a href="JS_TP1/index.html">TP1_JS</a></li>
-                </ul>
-            </li>
+    </div>
 
-            <li class="surbrillance">
-                <a href="#">Base de Données</a>
-                <ul>
-                    <li><a href="BDD PDF/BDD1.pdf">TP1</a></li>
-                    <li><a href="BDD PDF/BDD2.pdf">TP2</a></li>
-                </ul>
-            </li>
-
-            <li class="surbrillance">
-                <a href="#">PHP</a>
-                <ul>
-                    <li><a href="#">TP1</a></li>
-                    <li><a href="#">TP2</a></li>
-                </ul>
-            </li>
-
-            <li class="surbrillance">
-                <a href="#">Missions</a>
-                <ul>
-                    <li><a href="Mission1/index.html">Mission 1</a></li>
-                    <li><a href="Mission2/index.html">Mission 2</a></li>
-                    <li><a href="Mission3/mission3.html">Mission 3</a></li>
-                   <li><a href="Mission4/index.html">Mission 4</a></li>
-               </ul>
-            </li>
-
-            <li class="surbrillance">
-                <a href="#">Certification</a>
-                <ul>
-                    <li><a href="#">Certif 1</a></li>
-                    <li><a href="#">Certif 2</a></li>
-                </ul>
-            </li>
-        </ul>
-
-    <footer>
-        <a href="../index.html">RETOUR A MES TRAVAUX</a>
-    </footer>
+    <script src="exercice.js"></script>
 </body>
 </html>
