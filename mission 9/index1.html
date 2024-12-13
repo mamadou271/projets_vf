@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz PHP</h1>
+
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. Comment peut-on trier un tableau en ordre inverse ?</p>
+            <label><input type="radio" name="q1" value="a"> $tableau = ksort($tableau);</label><br>
+            <label><input type="radio" name="q1" value="b"> ksort($tableau)</label><br>
+            <label><input type="radio" name="q1" value="c"> $tableau = rsort($tableau);</label><br>
+            <label><input type="radio" name="q1" value="d"> rsort($tableau);</label>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. Comment définit-on une constante ?</p>
+            <label><input type="radio" name="q2" value="a"> set('maconstante' = 'valeur');</label><br>
+            <label><input type="radio" name="q2" value="b"> define("maconstante", "valeur");</label><br>
+            <label><input type="radio" name="q2" value="c"> const $maconstante = valeur;</label>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. Quelle instruction n'est pas le nom d'une fonction ?</p>
+            <label><input type="radio" name="q3" value="a"> exit</label><br>
+            <label><input type="radio" name="q3" value="b"> print_r</label><br>
+            <label><input type="radio" name="q3" value="c"> define</label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Quelle fonction permet de récupérer un fichier dans PHP ?</p>
+            <label><input type="radio" name="q4" value="a"> file_get_contents()</label><br>
+            <label><input type="radio" name="q4" value="b"> fopen()</label><br>
+            <label><input type="radio" name="q4" value="c"> file_put_contents()</label><br>
+            <label><input type="radio" name="q4" value="d"> fread()</label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. Quelle fonction permet de supprimer un fichier ?</p>
+            <label><input type="radio" name="q5" value="a"> delete()</label><br>
+            <label><input type="radio" name="q5" value="b"> unlink()</label><br>
+            <label><input type="radio" name="q5" value="c"> remove()</label><br>
+            <label><input type="radio" name="q5" value="d"> clearfile()</label>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. Quelle fonction permet de convertir une chaîne de caractères en entier ?</p>
+            <label><input type="radio" name="q6" value="a"> intval()</label><br>
+            <label><input type="radio" name="q6" value="b"> strval()</label><br>
+            <label><input type="radio" name="q6" value="c"> floatval()</label><br>
+            <label><input type="radio" name="q6" value="d"> boolval()</label>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. Quelle fonction permet de vérifier si une variable est définie ?</p>
+            <label><input type="radio" name="q7" value="a"> isset()</label><br>
+            <label><input type="radio" name="q7" value="b"> is_null()</label><br>
+            <label><input type="radio" name="q7" value="c"> empty()</label><br>
+            <label><input type="radio" name="q7" value="d"> defined()</label>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. Quelle fonction retourne la longueur d'une chaîne de caractères ?</p>
+            <label><input type="radio" name="q8" value="a"> strlen()</label><br>
+            <label><input type="radio" name="q8" value="b"> count()</label><br>
+            <label><input type="radio" name="q8" value="c"> sizeof()</label><br>
+            <label><input type="radio" name="q8" value="d"> array_length()</label>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. Quelle fonction permet de rediriger l'utilisateur vers une autre page ?</p>
+            <label><input type="radio" name="q9" value="a"> redirect()</label><br>
+            <label><input type="radio" name="q9" value="b"> header()</label><br>
+            <label><input type="radio" name="q9" value="c"> location()</label><br>
+            <label><input type="radio" name="q9" value="d"> go_to()</label>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Quelle fonction permet de démarrer une session PHP ?</p>
+            <label><input type="radio" name="q10" value="a"> session_start()</label><br>
+            <label><input type="radio" name="q10" value="b"> session_init()</label><br>
+            <label><input type="radio" name="q10" value="c"> start_session()</label><br>
+            <label><input type="radio" name="q10" value="d"> begin_session()</label>
+        </div>
+
+        <button id="submit-btn">Vérifier les réponses</button>
+        <button id="show-correction-btn">Afficher la correction</button>
+        <button id="correct-btn">Corriger</button>
+        <p id="result"></p>
+        <div id="correction" style="display:none;">
+            <h3>Correction :</h3>
+            <ul>
+                <li>1. d) rsort($tableau);</li>
+                <li>2. b) define("maconstante", "valeur");</li>
+                <li>3. a) exit</li>
+                <li>4. a) file_get_contents()</li>
+                <li>5. b) unlink()</li>
+                <li>6. a) intval()</li>
+                <li>7. a) isset()</li>
+                <li>8. a) strlen()</li>
+                <li>9. b) header()</li>
+                <li>10. a) session_start()</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="quizz.js"></script>
+</body>
+</html>

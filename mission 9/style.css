@@ -1,0 +1,87 @@
+/* Appliquer une police générale et une couleur de fond pour toute la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+/* Conteneur principal du quiz */
+.quiz-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;  /* Limite la largeur à 800px */
+    padding: 20px;
+    box-sizing: border-box;  /* Inclure la bordure et le padding dans la largeur totale */
+}
+
+/* Titre du quiz */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;  /* Espacement sous le titre */
+}
+
+/* Style de chaque question */
+.question {
+    margin-bottom: 15px;  /* Espacement entre les questions */
+    font-size: 10px;
+}
+
+/* Style des labels (options de réponse) */
+label {
+    display: block;
+    margin: 10px 0;  /* Espacement entre les options */
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style du bouton de soumission */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;  /* Ajout d'un espacement au-dessus du bouton */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Résultat du quiz */
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Adapter les éléments à une taille d'écran mobile */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .question {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module de Facturation</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Fonction pour recalculer les totaux
+        function recalculer() {
+            const rows = document.querySelectorAll(".table tbody tr");
+            let sousTotal = 0;
+            rows.forEach(row => {
+                const quantite = parseFloat(row.querySelector(".quantite").value) || 0;
+                const prixUnitaire = parseFloat(row.querySelector(".prix-unitaire").value) || 0;
+                const total = quantite * prixUnitaire;
+                row.querySelector(".total").textContent = total.toFixed(2);
+                sousTotal += total;
+            });
+
+            const remise = parseFloat(document.getElementById("remise").value) || 0;
+            const tva = parseFloat(document.getElementById("tva").value) || 0;
+            const expédition = parseFloat(document.getElementById("expedition").value) || 0;
+
+            const sousTotalApresRemise = sousTotal - (sousTotal * remise / 100);
+            const totalTVA = sousTotalApresRemise * tva / 100;
+            const totalFinal = sousTotalApresRemise + totalTVA + expédition;
+
+            document.getElementById("sous-total").textContent = sousTotal.toFixed(2);
+            document.getElementById("total-apres-remise").textContent = sousTotalApresRemise.toFixed(2);
+            document.getElementById("total-tva").textContent = totalTVA.toFixed(2);
+            document.getElementById("total-final").textContent = totalFinal.toFixed(2);
+        }
+
+        // Fonction pour ajouter une nouvelle ligne
+        function ajouterLigne() {
+            const tableBody = document.querySelector(".table tbody");
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><input type="text" class="description" placeholder="Description"></td>
+                <td><input type="number" class="quantite" value="0" min="0" oninput="recalculer()"></td>
+                <td><input type="number" class="prix-unitaire" value="0" min="0" oninput="recalculer()"></td>
+                <td class="total">0.00</td>
+            `;
+            tableBody.appendChild(newRow);
+        }
+    </script>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <div>
+                <h1>Nom de la compagnie</h1>
+                <p>Adresse postale</p>
+                <p>Détails de contact</p>
+            </div>
+            <div class="details">
+                <h2>FACTURE</h2>
+                <p>Date : 13/12/2024</p>
+                <p>#123456</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Destinataire</h3>
+            <p>Nom : ___________</p>
+            <p>Nom de la société : ___________</p>
+            <p>Adresse postale : ___________</p>
+            <p>Téléphone : ___________</p>
+            <p>Email : ___________</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>QUANTITÉ</th>
+                    <th>PRIX UNITAIRE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="description" placeholder="Description"></td>
+                    <td><input type="number" class="quantite" value="" min="0" oninput="recalculer()"></td>
+                    <td><input type="number" class="prix-unitaire" value="" min="0" oninput="recalculer()"></td>
+                    <td class="total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totals">
+            <div>SOUS-TOTAL : <span id="sous-total"></span></div>
+            <div>REMISE (%) : <input type="number" id="remise" value="10" min="0" oninput="recalculer()"></div>
+            <div>SOUS-TOTAL APRÈS REMISES : <span id="total-apres-remise"></span></div>
+            <div>TVA (%) : <input type="number" id="tva" value="10" min="0" oninput="recalculer()"></div>
+            <div>TOTAL TVA : <span id="total-tva"></span></div>
+            <div>EXPÉDITION, MANUTENTION : <input type="number" id="expedition" value="" min="0" oninput="recalculer()"></div>
+            <div><strong>SOLDE DÛ : <span id="total-final"></span></strong></div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="recalculer()">Calculer</button>
+            <button onclick="ajouterLigne()">Ajouter une ligne</button>
+        </div>
+    </div>
+</body>
+</html>
